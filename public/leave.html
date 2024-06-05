@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chef Leave Request</title>
+    <style>
+       
+    /* CSS styles */
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; 
+            text-decoration: none;
+        }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    .container-fluid {
+      background-color: black;
+    }
+
+    .nav-bar {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      height: 90px;
+      padding: 0 20px;
+      margin-bottom: 20px;
+    }
+
+    .nav-item {
+      margin-right: 20px;
+      font-weight: 800;
+      color: aliceblue;
+    }
+
+    .logo-item {
+      height: 50px;
+      width: 130px;
+    }
+
+    .logo {
+      margin-right: auto;
+    }
+
+    .back {
+      background-color:rgb(163, 54, 54);
+      border-radius: 5px;
+      height: 30px;
+      margin-top: 3px;
+      padding: 5px 10px;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    header p {
+      margin-top: 5px;
+      font-size: 1.2em;
+    }
+
+    #calendar {
+      width: 80%;
+      height: 80%;
+      margin: 0 auto;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+      padding: 20px;
+    }
+    table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+           
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        li strong {
+            font-weight: bold;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        form {
+            width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        textarea {
+            width: calc(100% - 12px);
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <nav class="nav-bar">
+          <div class="logo">
+            <img class="logo-item" src="pic1.png" alt="Logo">
+          </div>
+          <div class="zeroo">
+            <a href="chef.html" class="nav-item">CHEF</a>
+          </div>
+          <div class="one">
+            <a href="http://localhost:9000" class="nav-item">BOOKINGS</a>
+          </div>
+          <div class="two">
+            <a href="leave.html"><p class="nav-item">LEAVE</p></a>
+        </div>
+          <div class="five">
+            <a href="home.html" class="nav-item back">LOGOUT</a>
+          </div>
+        </nav>
+      </div>
+    <h2>Chef Leave Request Form</h2>
+    <form id="leave-request-form">
+        <label for="chef-name">Chef's Name:</label><br>
+        <input type="text" id="chef-name" name="chef-name" required><br><br>
+
+        <label for="starting-date">Starting Date:</label><br>
+        <input type="date" id="starting-date" name="starting-date" required><br><br>
+
+        <label for="ending-date">Ending Date:</label><br>
+        <input type="date" id="ending-date" name="ending-date" required><br><br>
+
+        <label for="reason">Reason:</label><br>
+        <textarea id="reason" name="reason" rows="4" cols="50" required></textarea><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        document.getElementById('leave-request-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+            
+            // Get form data
+            var formData = {
+                chefName: document.getElementById('chef-name').value,
+                startingDate: document.getElementById('starting-date').value,
+                endingDate: document.getElementById('ending-date').value,
+                reason: document.getElementById('reason').value
+            };
+
+            // Compose the email body
+            var emailBody = "Chef's Name: " + formData.chefName + "\n" +
+                            "Starting Date: " + formData.startingDate + "\n" +
+                            "Ending Date: " + formData.endingDate + "\n" +
+                            "Reason: " + formData.reason;
+
+            // Send email using SMTP.js
+            Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "sawant.parth15@gmail.com",
+                Password: "162320786F1659F1BD5C55F049CA4D687ACB",
+                To: "sawant.parth15@gmail.com",
+                From: "sawant.parth15@gmail.com",
+                Subject: "Chef Leave Request",
+                Body: emailBody
+            }).then(
+                function(response) {
+                    // Show success message
+                    alert("Leave request submitted successfully!");
+                },
+                function(error) {
+                    // Show error message
+                    alert("Error: Unable to submit leave request. Please try again later.");
+                }
+            );
+        });
+    </script>
+</body>
+</html>

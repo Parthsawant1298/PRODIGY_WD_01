@@ -1,0 +1,198 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image:url(head1.png);
+    margin: 0;
+    padding: 0;
+    animation: fadeIn 0.5s ease-in-out;
+     /* Add fade-in animation to the body */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.center-content {
+    
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    animation: slideIn 0.5s ease-in-out; /* Add slide-in animation to the content */
+    
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+fieldset {
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 10px; /* Add border radius for rounded corners */
+    background-color: #f8f9fa; /* Add background color */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Add box shadow for depth */
+    padding: 20px; /* Add padding for spacing */
+    animation: dramaticFadeIn 0.5s ease-in-out forwards; /* Add dramatic fade-in animation */
+}
+
+@keyframes dramaticFadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* fieldset {
+    margin-bottom: 20px;
+    border: none;
+} */
+legend {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color:rgb(100, 29, 29);
+    margin-bottom: 10px;
+    text-align: center; /* Center align the legend */
+    animation: fadeIn 0.5s ease-in-out; /* Add fade-in animation */
+    padding: 10px 20px; /* Add padding for spacing */
+    border: 1px solid rgb(100, 29, 29); /* Add border */
+    border-radius: 6px; /* Add border radius for rounded corners */
+    background-color: #f8f9fa; /* Add background color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* legend {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #007bff;
+    margin-bottom: 10px;
+} */
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1rem;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="file"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="file"]:focus {
+    border-color: #007bff;
+}
+
+.button {
+    padding: 12px 24px;
+    background-color: rgb(100, 29, 29); /* Default background color */
+    color: #fff; /* Default text color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 20px;
+}
+.buttoon {
+    padding: 12px 24px;
+    background-color: rgb(100, 29, 29); /* Default background color */
+    color: #fff; /* Default text color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 20px;
+    position: relative;
+    bottom: 62px;
+    left: 130px;
+}
+
+.button:hover {
+    background-color: rgb(53, 17, 17); /* Background color on hover */
+}
+/* input[type="submit"] {
+    padding: 12px 24px;
+    background-color: #1c1e21;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease-in-out;
+    width: 100%;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3 !important;
+}
+.button{
+    background-color: #2b202c;
+} */
+
+.join-us-msg {
+    text-align: center;
+    margin-bottom: 30px;
+    animation: fadeIn 0.5s ease-in-out; /* Add fade-in animation to the message */
+}
+
+.join-us-msg h2 {
+    color: rgb(100, 29, 29);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.join-us-msg p {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 0;
+}

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job application</title>
+    <link rel="stylesheet" type="text/css"  href="job.css" />
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'en',  // Set the source language of your website.
+          includedLanguages: 'es,fr,de,hi',  // List of languages to offer for translation.
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        }, 'google_translate_element');
+      }
+    
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+
+
+</head>
+<body>
+    <div class="center-container">
+        <div class="center-content">
+           <div class="join-us-msg">
+             <h2>WANT TO JOIN US? </h2>
+             <p>We're always looking for talented chefs to join our team!</p>
+          </div>
+          <form id="jobApplicationForm" action="jobnew.html" method="POST" enctype="multipart/form-data">
+
+            <fieldset>
+                <legend>Personal Information</legend>
+    
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required><br><br>
+    
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required><br><br>
+    
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required><br><br>
+    
+                <label for="country">Country:</label>
+                <input type="text" id="country" name="country" required><br><br>
+    
+                <label for="state">State/Province:</label>
+                <input type="text" id="state" name="state"><br><br>
+        
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required><br><br>
+    
+                <label for="zip">Zip/Postal Code:</label>
+                <input type="text" id="zip" name="zip" required><br><br>
+        
+                <label for="linkedin">LinkedIn Profile (optional):</label>
+                <input type="url" id="linkedin" name="linkedin"><br><br>
+    
+            </fieldset>
+        
+            <fieldset>
+                <legend>Education</legend>
+                <label for="educationLevel">Highest Level of Education Completed:</label>
+                <input type="text" id="educationLevel" name="educationLevel" required><br><br>
+        
+                <label for="institution">Name of Institution:</label>
+                <input type="text" id="institution" name="institution" required><br><br>
+        
+                <label for="degree">Degree/Diploma/Certificate:</label>
+                <input type="text" id="degree" name="degree" required><br><br>
+        
+                <label for="gradYear">Graduation Year:</label>
+                <input type="number" id="gradYear" name="gradYear" required><br><br>
+            </fieldset>
+        
+            <fieldset>
+                <legend>Culinary Experience</legend>
+                <label for="chefExperience">Years of Experience as a Chef:</label>
+                <input type="number" id="chefExperience" name="chefExperience" required><br><br>
+        
+                <label for="specialties">Specialties:</label>
+                <input type="text" id="specialties" name="specialties" required><br><br>
+        
+                <label for="certifications">Certifications:</label>
+                <input type="text" id="certifications" name="certifications"><br><br>
+                <label for="awards">Culinary Awards or Recognitions (if any):</label>
+                <input type="text" id="awards" name="awards"><br><br>
+            </fieldset>
+            <fieldset>
+                <legend>Upload Files</legend>
+                <label for="coverPage">Upload Your Image(Passport Size):</label>
+                <input type="file" id="coverPage" name="coverPage" accept=".jpg, .jpeg, .png" required>
+
+                <label for="productPdf">Upload Certificates:</label>
+                <input type="file" id="productPdf" name="productPdf" accept=".pdf" >
+            </fieldset>
+            <button class="button" type="submit">SUBMIT</button>
+          
+          </form>
+          <a href="http://localhost:8080"><button class="buttoon">BACK</button></a>
+        </div>
+    </div>
+
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+    function sendApplication(applicationDetails) {
+        var body = "<h2>New Job Application</h2>" +
+            "<p><strong>Name:</strong> " + applicationDetails.fullName + "</p>" +
+            "<p><strong>Email:</strong> " + applicationDetails.email + "</p>" +
+            "<p><strong>Phone:</strong> " + applicationDetails.phone + "</p>" +
+            "<p><strong>Address:</strong> " + applicationDetails.address + ", " +
+            applicationDetails.city + ", " + applicationDetails.state + ", " +
+            applicationDetails.zip + ", " + applicationDetails.country + "</p>" +
+            "<p><strong>LinkedIn:</strong> " + applicationDetails.linkedin + "</p>" +
+            "<h3>Education</h3>" +
+            "<p><strong>Level:</strong> " + applicationDetails.educationLevel + "</p>" +
+            "<p><strong>Institution:</strong> " + applicationDetails.institution + "</p>" +
+            "<p><strong>Degree:</strong> " + applicationDetails.degree + "</p>" +
+            "<p><strong>Graduation Year:</strong> " + applicationDetails.gradYear + "</p>" +
+            "<h3>Culinary Experience</h3>" +
+            "<p><strong>Experience:</strong> " + applicationDetails.chefExperience + " years</p>" +
+            "<p><strong>Specialties:</strong> " + applicationDetails.specialties + "</p>" +
+            "<p><strong>Certifications:</strong> " + applicationDetails.certifications + "</p>" +
+            "<p><strong>Awards:</strong> " + applicationDetails.awards + "</p>";
+
+        var reader = new FileReader();
+        reader.onloadend = function () {
+                var coverPageBase64 = reader.result.split(',')[1];
+
+                // Read productPdf file
+                reader.onloadend = function () {
+                    var productPdfBase64 = reader.result.split(',')[1];
+
+
+      
+
+            Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "sawant.parth15@gmail.com",
+                Password: "162320786F1659F1BD5C55F049CA4D687ACB",
+                To: "sawant.parth15@gmail.com",
+                From: "sawant.parth15@gmail.com",// Use the same email address as the SMTP username
+                Subject: "New job application submission",
+                Body: body,
+                Attachments:  [
+                            {
+                                name: "coverPage.jpg",
+                                data: coverPageBase64
+                            },
+                            {
+                                name: "productPdf.pdf",
+                                data: productPdfBase64
+                            }
+                        ]
+                    }).then(
+                        function (message) {
+                            alert("Application submitted successfully!");
+                            window.location.href = "jobnew.html"; // 
+                        }
+                    );
+                };
+
+                reader.readAsDataURL(applicationDetails.productPdfFile);
+            };
+
+            reader.readAsDataURL(applicationDetails.coverPageFile);
+        }
+    
+
+    document.getElementById("jobApplicationForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        var fullName = document.getElementById("fullName").value;
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("phone").value;
+        var address = document.getElementById("address").value;
+        var country = document.getElementById("country").value;
+        var state = document.getElementById("state").value;
+        var city = document.getElementById("city").value;
+        var zip = document.getElementById("zip").value;
+        var linkedin = document.getElementById("linkedin").value;
+        var educationLevel = document.getElementById("educationLevel").value;
+        var institution = document.getElementById("institution").value;
+        var degree = document.getElementById("degree").value;
+        var gradYear = document.getElementById("gradYear").value;
+        var chefExperience = document.getElementById("chefExperience").value;
+        var specialties = document.getElementById("specialties").value;
+        var certifications = document.getElementById("certifications").value;
+        var awards = document.getElementById("awards").value;
+        var coverPageFile = document.getElementById("coverPage").files[0];
+        var productPdfFile = document.getElementById("productPdf").files[0];
+
+
+        var applicationDetails = {
+            fullName: fullName,
+            email: email,
+            phone: phone,
+            address: address,
+            country: country,
+            state: state,
+            city: city,
+            zip: zip,
+            linkedin: linkedin,
+            educationLevel: educationLevel,
+            institution: institution,
+            degree: degree,
+            gradYear: gradYear,
+            chefExperience: chefExperience,
+            specialties: specialties,
+            certifications: certifications,
+            awards: awards,
+            coverPageFile: coverPageFile,
+            productPdfFile: productPdfFile
+        };
+
+        sendApplication(applicationDetails);
+    });
+</script>
+</body>
+</html>

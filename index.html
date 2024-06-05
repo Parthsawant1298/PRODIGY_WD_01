@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cullinary Connect</title>
+    
+    
+    
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  
+    <!-- Swiper CDN link -->
+   
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'en',  // Set the source language of your website.
+          includedLanguages: 'es,fr,de,hi',  // List of languages to offer for translation.
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        }, 'google_translate_element');
+      }
+    
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; 
+            text-decoration: none;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0; /* Remove default margin */
+        }
+
+        /* .up-nav {  
+            height: 50px;
+            width: 100%;
+            text-align: center;
+            background-color: bisque;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+*/
+        .container-fluid {
+            background-color: black;
+        }
+
+        .nav-bar {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 90px;
+            padding: 0 20px;
+        }
+
+        .nav-item {
+            margin-right: 20px;
+            font-weight: 800;
+            color: aliceblue;
+        }
+
+        .logo-item {
+            height: 50px;
+            width: 130px;
+        }
+
+        .logo {
+            margin-right: auto;
+        }
+
+        .one {
+            position: relative;
+            right: 56px;
+        }
+
+        .two {
+            position: relative;
+            right: 40px;
+        }
+
+        .three {
+            position: relative;
+            right: 20px;
+        }
+
+        
+
+        .five {
+            position: relative;
+            left: 15px;
+        }
+
+        .back {
+            background-color:rgb(163, 54, 54);
+            border-radius: 5px;
+            height: 30px;
+            margin-top: 3px;
+            padding: 5px 10px;
+        }
+
+        .hi {
+            width: 100%;
+            height: 100vh; /* Set height to full viewport height */
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden; /* Hide overflowing content */
+            position: relative;
+        }
+
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Place the video behind other content */
+            object-fit: cover;
+        }
+
+        .content {
+            text-align: center;
+            padding: 50px;
+            color: #333; /* Change text color */
+        }
+
+        .content h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color:rgb(163, 54, 54);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .line{
+            color: aliceblue;
+            
+        }
+        .line1{
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            position: relative;
+            top:30px;
+
+        }
+        .zero{
+            position: relative;
+            right: 70px;
+        }
+        .zeroo{
+            position: relative;
+            right: 90px;
+        }
+        header {
+            background-color:black;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        header p {
+            margin-top: 5px;
+            font-size: 1.2em;
+        }
+        .cont-fluid {
+            display: flex;
+            justify-content: space-between;
+            padding: 50px; /* Add padding for spacing */
+        }
+       
+
+        .title {
+            position: relative;
+            top: 40px;
+            font-size: 2.5em;
+         
+           margin-left: 44px;
+          
+        }
+
+        .para {
+            font-size: 1.2em; /* Adjust paragraph font size */
+            color:#333; /* Adjust paragraph color */
+            margin-bottom: 30px;
+            width: 500px; /* Add space below the paragraph */
+            font-family:Arial, Helvetica, sans-serif;
+           
+        }
+
+        .cont-fluid img {
+            width: 550px; /* Set maximum width for the image */
+            height: 300px; 
+            margin-right: 5px;
+            margin-bottom: 30px;
+            border-radius: 20px;
+          
+        }
+  /* Why Us Section Styles */
+#why-us {
+    background-color: var(--bs-danger-bg-subtle)!important;
+    padding: 60px 0; /* Adjust as needed */
+}
+
+.section-title {
+    text-align: center;
+   position: relative;
+   bottom:40px;
+   margin-bottom: 20px;
+    margin-top: 20px;
+    color:white; /* Title color */
+    font-family: 'Arial', sans-serif; /* Use your preferred font */
+}
+
+.why-us .box1 {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease-in-out;
+    position: relative;
+    left:50px;
+    top:10px;
+    overflow: hidden;
+    width: 350px;
+    height: 300px;
+    
+    flex: 1;
+}
+.why-us .box2 {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease-in-out;
+    position: relative;
+     bottom: 320px;
+   
+    overflow: hidden;
+    width: 350px;
+    height: 300px;
+    left: 870px;
+    flex: 1;
+}
+.why-us .box3 {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease-in-out;
+    position: relative;
+    bottom: 650px;
+    left:460px;
+    overflow: hidden;
+    width: 350px;
+    height: 300px;
+  
+    flex: 1;
+}
+.nice {
+    width: 100%;
+            height: 90vh; /* Set height to full viewport height */
+            color: white;
+            position: relative;
+
+           
+          
+          
+           
+}
+.why-us .box1:hover,
+.why-us .box2:hover,
+.why-us .box3:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+.why-us .box1 h4,
+.why-us .box2 h4,
+.why-us .box3 h4 {
+    color: #333; /* Change heading color */
+    font-size: 1.5em; /* Adjust heading font size */
+    margin-bottom: 1px; /* Add space below heading */
+}
+
+.why-us .box1 p,
+.why-us .box2 p,
+.why-us .box3 p {
+    color: #666; /* Change paragraph color */
+    font-size: 1.1em; /* Adjust paragraph font size */
+    line-height: 1.6; /* Adjust line height for better readability */
+}
+.backk{
+    background-image: linear-gradient(to left,white 0%, white 100%);
+}
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border: 3px solid #454035;
+}
+
+.gallery-item img {
+    width: 248px;
+    height: 250px;
+    transition: transform ease-in-out 0.4s;
+}
+
+.image1:hover {
+    transform: scale(1.1);
+}
+
+.image2:hover {
+    transform: scale(1.1);
+}
+
+.image3:hover {
+    transform: scale(1.1);
+}
+
+.image4:hover {
+    transform: scale(1.1);
+}
+
+.image5:hover {
+    transform: scale(1.1);
+}
+
+.containerss {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+
+    .image:hover {
+        transform: scale(1.1);
+    }
+
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border: 3px solid #454035;
+    
+}
+
+.gallery-item img {
+    width: 248px;
+    height: 250px;
+    transition: transform ease-in-out 0.4s;
+}
+
+.image1:hover,
+.image2:hover,
+.image3:hover,
+.image4:hover,
+.image5:hover {
+    transform: scale(1.1);
+}
+
+.containerss {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+#testimonials {
+        margin-top: 20px;
+        
+        padding: 60px 0;
+        height: 600px;
+    }
+.containeeer{
+    width: 100%;
+            height: 83vh; /* Set height to full viewport height */
+            color: white;
+            position: relative;
+            bottom: 70px;
+
+}
+    .testimonials {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        overflow-y: hidden; /* Hide vertical scrollbar */
+  
+       
+    }
+
+    .testimonial {
+        background-color:transparent ;
+        border: 4px solid white;
+       
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 300px;
+        height: 400px;
+        margin-right: 20px;
+        flex: 0 0 auto;
+        text-align: center;
+    }
+
+    .quote p {
+        font-size: 1.2em;
+        color: white;
+        margin-bottom: 20px;
+    }
+
+    .author img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+    }
+
+    .author h4 {
+        margin: 5px 0;
+        color: white;
+        font-size: 1.5em;
+    }
+
+    .author p {
+        color: white;
+        font-size: 1.2em;
+    }
+    .home-banner {
+  background-color: var(--bs-danger-bg-subtle)!important;
+  background-size: cover;
+  background-position: center;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.bannerContainer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.home-banner-heading {
+  color: #343a40;
+  font-size: 36px;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.home-banner-sub-heading {
+  color: #6c757d;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  display: block;
+}
+
+.buttonFilled {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  background-color:rgb(163, 54, 54);
+  color: #fff;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  position: relative;
+  top:20px;
+}
+.buttonFilledd {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  background-color:rgb(163, 54, 54);
+  color: #fff;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  position: relative;
+  top:65px;
+}
+
+
+.buttonFilled:hover {
+  background-color: #dc3545; /* Darker shade on hover */
+}
+/*-------footer------*/
+#footer{
+   background-color: black;
+    color: white;
+    margin-top: 40px;
+}
+.footer-img{
+    width: 30px;
+}
+.footer-box1{
+padding: 20px;
+
+}
+.footer-box2{
+padding: 20px;
+
+
+}
+.footer-box3{
+padding: 20px;
+
+}
+
+
+
+.img{
+  
+    top:50px;
+    width: 200px;
+    height: 50px;
+}
+
+.footer-box .fa{
+margin-right:8px ;
+font-size:25px ;
+height: 40px;
+width: 40px;
+text-align: center;
+padding-top: 7px;
+border-radius: 2px;
+border-color: black;
+}
+.form-control .footer-box{
+box-shadow: none !important;
+border: none;
+border-radius: 0;
+margin-top: 25px;
+max-width: 250px;
+}
+.footer-box .btn-primary{
+position: relative;
+
+box-shadow: none;
+border: none;
+border-radius: 0;
+margin-top: 30px;
+background-color: black;
+
+}
+hr{
+background-color: white;
+}
+.copyright{
+    margin-bottom:0 ;
+    padding-bottom:20px ;
+text-align: center;
+}
+.social-icons img{
+    position: relative;
+    left: 480px;
+    width: 60px;
+    transition: 0.5s;
+    margin-top: 10PX;
+}
+.social-icons a:hover img
+{
+    transform: translateY(-10px);
+}
+.job{
+   margin-left: 900px;
+   position: relative;
+   bottom: 300px;
+}
+.section-titleee{
+    position: relative;
+   bottom: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 19px;
+}
+
+    </style>
+</head>
+
+<body>
+    <!--<div class="up-nav">
+        <p class="text">Flavors that Speak, Chefs that Inspire !!!</p>
+    </div>-->
+    <form action="/index" method="POST">
+    <div class="container-fluid">
+        <nav class="nav-bar">
+            <div class="logo">
+                <img class="logo-item" src="public/logoo.png" alt="Logo">
+            </div>
+            <div class="zeroo">
+                <a href="#l"><p class="nav-item">HOME</p></a>
+            </div>
+         
+            <div class="one">
+               <a href="#"> <p class="nav-item">OUR CHEFS</p></a>
+            </div>
+           
+            <div class="three">
+               <a href="#"> <p class="nav-item">FAQ</p></a>
+            </div>
+            <div class="four">
+                <a href="#"><p class="nav-item">CONTACT US</p></a>
+            </div>
+            <div class="five">
+                <a href="#"><p class="nav-item back">LOGOUT</p></a>
+            </div>
+        </nav>
+    </div>
+  
+    <div class="hi">
+        <video class="video-background" autoplay muted loop>
+            <!-- Initially empty source -->
+            <source src="public/l.mp4" type="video/mp4">
+            <!-- Provide fallback content for browsers that don't support HTML5 video -->
+            Your browser does not support the video tag.
+        </video>
+        <div class="content">
+            <h1 class="line">" Most Trusted Platform for At-Home Cooking Services"</h1>
+            <h4 class="line1">FIND YOUR PERFECT COOK HERE</h4>
+           
+            
+        </div>
+    </div>
+    <header>
+
+    </header>
+    
+    <div class="container_fluid backk">
+    <h1 class="title">THE CULLINARY CONNECT</h1>
+   <div class="cont-fluid">
+   
+    <p class="para">
+        Welcome to Culinary Connect, your ultimate destination for authentic homemade meals. At Culinary Connect, we're passionate about connecting talented home cooks with food enthusiasts who appreciate the taste and love that goes into every dish. Our platform serves as a hub for culinary exploration, where you can discover a diverse array of homemade delights crafted with care and expertise. Whether you're craving traditional comfort food or exploring exciting new flavors, Culinary Connect brings the joy of home cooking straight to your doorstep. Join us in celebrating the art of cooking and the joy of sharing delicious meals with loved ones. Let Culinary Connect be your guide to a world of culinary delights, where every bite tells a story and every meal creates connections.
+    </p>
+    <div class="image">
+        <img src="public/c.png" id="cImage">
+    </div>
+    
+   </div>
+   <div class="cont-fluid">
+    <div class="image">
+        <img src="public/a.png" id="cImage">
+    </div>
+    
+    <p class="para">
+        Discover the magic of homemade meals with Culinary Connect, your go-to destination for authentic culinary experiences. At Culinary Connect, we're dedicated to uniting skilled home cooks with discerning food lovers who savor the flavors and passion infused into every dish. Our platform serves as a treasure trove of culinary delights, where you can explore a diverse range of homemade masterpieces crafted with precision and care. Whether you're in the mood for comforting classics or eager to embark on a culinary adventure, Culinary Connect promises to deliver the essence of home cooking right to your doorstep. Join us in embracing the art of cooking and the joy of sharing delicious meals with friends and family. Let Culinary Connect guide you on a journey
+    </p>
+   
+   </div>
+
+</div>
+<div class="nice ">
+    <video class="video-background" autoplay muted loop>
+        <!-- Initially empty source -->
+        <source src="public/m.mp4" type="video/mp4">
+        <!-- Provide fallback content for browsers that don't support HTML5 video -->
+        Your browser does not support the video tag.
+    </video>
+    
+    <section id="why-us" class="why-us">
+      
+            <div class="section-title">
+                <h2>Why Choose Us</h2>
+                <p>Discover the Magic of Culinary Connect</p> <!-- Updated title -->
+            </div>
+           
+                    <div class="box1" data-aos="zoom-in" data-aos-delay="100">
+                        <h4>Explore Authentic Homemade Meals</h4> <!-- Updated heading -->
+                        <p>Embark on a culinary journey filled with authentic homemade delights crafted by passionate home cooks. Discover the rich flavors and love that goes into every dish, bringing the joy of home cooking straight to your doorstep.</p> <!-- Updated content -->
+                    </div>
+               
+               
+                    <div class="box2" data-aos="zoom-in" data-aos-delay="200">
+                        <h4>Connect with Talented Home Cooks</h4> <!-- Updated heading -->
+                        <p>Experience the talent and expertise of our curated community of home cooks. From traditional comfort food to innovative culinary creations, our platform connects you with skilled individuals who share their passion for cooking.</p> <!-- Updated content -->
+                    </div>
+               
+              
+                    <div class="box3" data-aos="zoom-in" data-aos-delay="300">
+                        <h4>Enjoy Convenience and Quality</h4> <!-- Updated heading -->
+                        <p>With Culinary Connect, enjoy the convenience of delicious homemade meals delivered straight to your doorstep. Experience the highest standards of quality and freshness, ensuring a delightful dining experience with every bite.</p> <!-- Updated content -->
+                    </div>
+               
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="home-banner">
+    <div class="bannerContainer home-banner1">
+      <h1 class="home-banner-heading heading2">
+        Embark on a Culinary Adventure with Culinary Connect
+      </h1>
+      <span class="home-banner-sub-heading bodySmall">
+        <span>
+          <span>
+            <span>
+              Culinary Connect is your portal to a world of delectable flavors and homemade delights. Dive into a diverse culinary landscape and experience the joy of authentic home-cooked meals delivered right to your doorstep. Whether you're craving traditional dishes or exploring new cuisines, Culinary Connect brings the essence of homemade cooking to your table. Join us on a journey of gastronomic discovery and savor every bite!
+            </span>
+            <span></span>
+          </span>
+          <span>
+            <span></span>
+            <span></span>
+          </span>
+        </span>
+        <span>
+          <span>
+            <span></span>
+            <span></span>
+          </span>
+          <span>
+            <span></span>
+            <span></span>
+          </span>
+        </span>
+      </span>
+      <a href="#" class="buttonFilled">Explore Culinary Delights</a>
+    </div>
+  </div>
+  
+<section id="testimonials">
+    <div class="containeeer">
+        <video class="video-background" autoplay muted loop>
+            <!-- Initially empty source -->
+            <source src="public/z.mp4" type="video/mp4">
+            <!-- Provide fallback content for browsers that don't support HTML5 video -->
+            Your browser does not support the video tag.
+        </video>
+        
+        <div class="section-title">
+            <h2>What our customers are saying</h2>
+        </div>
+
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="testimonial">
+                        <div class="quote">
+                            <p>"Exceptional platform for discovering homemade meals! I've been amazed by the variety and quality of dishes available. It's like enjoying a home-cooked meal from my mom's kitchen!"</p>
+                        </div>
+                        <div class="author">
+                            <img src="public/chef5.png" alt="Customer Avatar">
+                            <h4>Emily Rodriguez</h4>
+                            <p>Happy Foodie</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="testimonial">
+                        <div class="quote">
+                            <p>"Culinary Connect has made my life so much easier! I love being able to order delicious homemade meals with just a few clicks. It's like having a personal chef at my fingertips!"</p>
+                        </div>
+                        <div class="author">
+                            <img src="public/chef4.png" alt="Customer Avatar">
+                            <h4>Michael Thompson</h4>
+                            <p>Satisfied Customer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="testimonial">
+                        <div class="quote">
+                            <p>"Thanks to Culinary Connect, I've discovered new flavors and cuisines that I never knew existed. It's been a delightful culinary journey through the heart of India!"</p>
+                        </div>
+                        <div class="author">
+                            <img src="public/chef3.png" alt="Customer Avatar">
+                            <h4>Sarah Miller</h4>
+                            <p>Adventurous Eater</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="testimonial">
+                        <div class="quote">
+                            <p>"The convenience of having homemade meals delivered to my doorstep is unbeatable! Culinary Connect has become my go-to for delicious, hassle-free dining. It's like having a local Indian kitchen just a phone call away!"</p>
+                        </div>
+                        <div class="author">
+                            <img src="public/chef2.png" alt="Customer Avatar">
+                            <h4>Christopher Davis</h4>
+                            <p>Happy Customer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="testimonial">
+                        <div class="quote">
+                            <p>"Culinary Connect has exceeded my expectations in every way. The variety, quality, and service are unmatched. I highly recommend it to all food lovers, especially those craving authentic Indian flavors!"</p>
+                        </div>
+                        <div class="author">
+                            <img src="public/chef1.png" alt="Customer Avatar">
+                            <h4>Alice Turner</h4>
+                            <p>Loyal Customer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</section>
+<section id="gallery" class="gallery">
+
+    <div class="container" data-aos="fade-up">
+      <div class="section-titleee">
+        <h2>Gallery</h2>
+        <p>Some photos of dishes made by chef</p>
+      </div>
+    </div>
+  
+    <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
+  
+      <div class="row g-0">
+  
+          <div class="col-lg-3 col-md-6">
+              <div class="gallery-item">
+                  <img src="public/g1.png" alt="" class="img-fluid image1">
+                  <img src="public/g2.png" alt="" class="img-fluid image2">
+                  <img src="public/g3.png" alt="" class="img-fluid image3">
+                  <img src="public/g4.png" alt="" class="img-fluid image4">
+                  <img src="public/g5.png" alt="" class="img-fluid image5">
+              </div>
+          </div>
+          
+  
+        <div class="col-lg-3 col-md-6">
+          <div class="gallery-item">
+              <img src="public/g6.png" alt="" class="img-fluid image1">
+              <img src="public/g7.png" alt="" class="img-fluid image2">
+              <img src="public/g8.png" alt="" class="img-fluid image3">
+              <img src="public/b.png" alt="" class="img-fluid image4">
+              <img src="public/a.png" alt="" class="img-fluid image5">
+          </div>
+      </div>
+      
+   </div>
+  
+    </div>
+  </section>
+  <section id="footer">
+    <div class="contaaaainer-fluid">
+        <div class="row">
+            <div class="col-md-4 footer-box1">
+                <img class="img" src="public/logoo.png" alt="Culinary Connect Logo">
+                <p>**ALL RIGHTS RESERVED**</p>
+            </div>
+            <div class="col-md-4 footer-box2">
+                <p><b>CONTACT US</b></p>
+                <p><i class="fa fa-map-marker"></i> WORLD TRADE CENTER, MUMBAI</p>
+                <p><i class="fa fa-phone"></i> +91 9833245671</p>
+                <p><i class="fa fa-envelope"></i> info@culinaryconnect.com</p>
+            </div>
+            <div class="col-md-4 footer-box3">
+                <p><b>SUBSCRIPTION</b></p>
+                <input type="email" class="form-control" placeholder="Your Email">
+                <button type="button" class="btn btn-primary">SUBSCRIBE</button>
+            </div>
+        </div>
+        <div class="job">
+            <h1>Click below to apply for job</h1>
+            <a href="public/jobnew.html"><button type="button" class="btn btn-primary">APPLY</button></a>
+        </div>
+        <div class="container text-center">
+            <hr>
+            <div class="social-icons">
+                <a href="#"><img src="public/twitter-icon.png" alt="Twitter"></a>
+                <a href="#"><img src="public/instagram-icon.png" alt="Instagram"></a>
+                <a href="#"><img src="public/linkedin-icon.png" alt="LinkedIn"></a>
+                <a href="#"><img src="public/facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="public/whatsapp-icon.png" alt="WhatsApp"></a>
+                <a href="#"><img src="public/snapchat-icon.png" alt="Snapchat"></a>
+            </div>
+            <hr>
+        </div>
+    </div>
+
+
+<section id="social-media">
+   
+</section>
+
+</form>
+
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+<script>
+   
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 4, // Number of slides per view
+        spaceBetween: 30, // Space between each slide
+        loop: true, // Enable loop mode
+        autoplay: {
+            delay: 4000, // Autoplay delay in milliseconds
+        },
+        pagination: {
+            el: '.swiper-pagination', // Pagination container
+            clickable: true, // Enable pagination clickable
+        },
+    });
+</script>
+
+</body>
+
+</html>

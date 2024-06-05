@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title</title>
+    
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'en',  // Set the source language of your website.
+          includedLanguages: 'es,fr,de,hi',  // List of languages to offer for translation.
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        }, 'google_translate_element');
+      }
+    
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0; /* Remove default margin */
+        }
+
+        .container-fluid {
+            background-color: black;
+        }
+
+        .nav-bar {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 90px;
+            padding: 0 20px;
+        }
+
+        .nav-item {
+            margin-right: 20px;
+            font-weight: 800;
+            color: aliceblue;
+        }
+
+        .logo-item {
+            height: 60px;
+            width: 190px;
+            position: relative;
+            right: 20px;
+        }
+
+        .logo {
+            margin-right: auto;
+        }
+
+        .five {
+            position: relative;
+            right: 450px;
+        }
+        .three{
+          position: relative;
+          right: 460px;
+        }
+        .four{
+          position: relative;
+          right:455px;
+        }   
+
+        .back {
+            background-color: rgb(163, 54, 54);
+            border-radius: 5px;
+            height: 30px;
+            margin-top: 3px;
+            padding: 5px 10px;
+        }
+
+        .hi {
+            width: 100%;
+            height: 100vh; /* Set height to full viewport height */
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden; /* Hide overflowing content */
+            position: relative;
+        }
+
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Place the video behind other content */
+            object-fit: cover;
+        }
+
+        .content {
+            text-align: center;
+            padding: 50px;
+            color: #333; /* Change text color */
+        }
+
+        header {
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        header p {
+            margin-top: 5px;
+            font-size: 1.2em;
+        }
+
+        .line {
+            font-size: 50px;
+            color: white;
+            position: relative;
+            bottom: 30px;
+        }
+
+        .p {
+            color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/index" method="POST">
+        <div class="container-fluid">
+            <nav class="nav-bar">
+                <div class="logo">
+                    <img class="logo-item" src="logoo.png" alt="Logo">
+                </div>
+                <div class="three">
+                    <a href="#"><p class="nav-item">HOME</p></a>
+                </div>
+                <div class="four">
+                    <a href="home aboutus.html"><p class="nav-item ">ABOUT US</p></a>
+                </div>
+                <div class="five">
+                    <a href="loginoption.html"><p class="nav-item ">LOGIN</p></a>
+                </div>
+            </nav>
+        </div>
+
+        <div class="hi">
+            <video class="video-background" autoplay muted loop>
+                <!-- Initially empty source -->
+                <source src="r.mp4" type="video/mp4">
+                <!-- Provide fallback content for browsers that don't support HTML5 video -->
+                Your browser does not support the video tag.
+            </video>
+            <div class="content">
+                <h1 class="line">" CULLINARY CONNECT "</h1>
+                <p class="p" style="font-size: 1.2em;">Welcome to Culinary Connect! We are your one-stop platform for connecting with chefs, exploring culinary delights, and sharing your passion for food. Whether you're a professional chef, a culinary enthusiast, or someone who simply loves good food, Culinary Connect is here to bring you together and inspire culinary creativity. Join us today and embark on a flavorful journey!</p>
+
+            </div>
+        </div>
+    </form>
+    <header>
+    </header>
+    <script>
+        // Array of video sources
+        const videos = ['o.mp4', 's.mp4','r.mp4'];
+        let currentIndex = 0;
+        const videoElement = document.querySelector('.video-background');
+
+        // Function to change video source
+        function changeVideo() {
+            videoElement.src = videos[currentIndex];
+            currentIndex = (currentIndex + 1) % videos.length;
+        }
+
+        // Change video every 5 seconds
+        setInterval(changeVideo, 5000);
+    </script>
+</body>
+
+</html>

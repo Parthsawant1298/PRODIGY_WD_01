@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Your head content here -->
+    <style>
+      /* Reset some default browser styles */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+      .video-bg {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -1;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .registration {
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        border-radius: 5%;
+        padding: 10px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 300px;
+        height: 320px; /* Adjusted height */
+      }
+
+      h1 {
+        font-size: 22px;
+        font-weight: 600;
+        color: #000000;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      .input-field {
+        width: 100%;
+        height: 40px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+
+      .input-field input {
+        width: 85%;
+        height: 100%;
+        padding: 0 15px;
+        border: 1px solid #fff6f6;
+        border-radius: 8px;
+        outline: none;
+        border: none;
+      }
+
+      .input-field .fa-regular {
+        position: absolute;
+        right: 13px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 18px;
+        color: #919191;
+        cursor: pointer;
+        padding: 3px;
+      }
+
+      .button {
+        display: flex;
+        justify-content: center;
+        font-size: 1.3rem;
+        text-transform: capitalize;
+        letter-spacing: 1.5px;
+        padding: 6px 1.2px;
+      }
+
+      .button input {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 400;
+        background-color: #093b55;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 150px;
+      }
+
+      .button input:hover {
+        background-color: #a1d8f5;
+      }
+
+      .button input:active {
+        transform: scale(0.95);
+      }
+
+      .error-text {
+        font-size: 12px;
+      }
+      
+      /* Adjust the alignment of radio buttons and labels */
+      .input-field input[type="radio"] {
+        margin-right: 5px;
+        margin-top: 2px;
+      }
+    </style>
+</head>
+<body>
+
+  <video autoplay loop muted class="video-bg">
+    <source src="q.mp4" type="video/mp4">
+    <!-- Add other video sources if needed -->
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="container">
+    <div class="registration">
+      <form action="/login" method="POST" id="loginForm">
+        <h1>Log In</h1>
+        <div class="input-field">
+          <label for="userRole">Login as:</label>
+          <input type="radio" name="userRole" value="customer" id="customerRadio" checked>
+          <label for="customerRadio">CUSTOMER</label>
+          <input type="radio" name="userRole" value="chef" id="chefRadio">
+          <label for="chefRadio">CHEF</label>
+          <input type="radio" name="userRole" value="admin" id="adminRadio">
+          <label for="adminRadio">ADMIN</label>
+        </div>
+        <div class="input-field button">
+          <input type="submit" value="LOGIN" />
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const customerRadio = document.getElementById('customerRadio');
+    const chefRadio = document.getElementById('chefRadio');
+    const adminRadio = document.getElementById('adminRadio');
+
+    loginForm.addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent the form from submitting
+
+      if (customerRadio.checked) {
+        // Redirect to the customer's login page
+        window.location.href = "http://localhost:3000";
+      } else if (chefRadio.checked) {
+        // Redirect to the chef's login page
+        window.location.href = "cheflogin.html";
+      } else if (adminRadio.checked) {
+        // Redirect to the admin's login page
+        window.location.href = "http://localhost:5000";
+      }
+    });
+  </script>
+</body>
+</html>

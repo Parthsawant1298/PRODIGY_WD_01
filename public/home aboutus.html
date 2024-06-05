@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culinary Connect - Culinary Companion</title>
+    
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'en',  // Set the source language of your website.
+          includedLanguages: 'es,fr,de,hi',  // List of languages to offer for translation.
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        }, 'google_translate_element');
+      }
+    
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+
+    <style>
+        * {
+            margin: 0;
+         
+           
+            text-decoration: none;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0; /* Remove default margin */
+        }
+
+        .container-fluid {
+            background-color: black;
+        }
+
+        .back {
+            background-color:rgb(163, 54, 54);
+            border-radius: 5px;
+            height: 30px;
+            margin-top: 3px;
+            padding: 5px 10px;
+        }
+        .nav-bar {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 90px;
+            padding: 0 20px;
+        }
+
+        .nav-item {
+            margin-right: 20px;
+            font-weight: 800;
+            color: aliceblue;
+        }
+
+        .logo-item {
+            height: 50px;
+            width: 130px;
+        }
+
+        .logo {
+            margin-right: auto;
+        }
+
+        .line {
+            color: aliceblue;
+        }
+
+        .line1 {
+            color: white;
+            font-weight: bold;
+        }
+
+        .hi {
+            width: 100%;
+            height: 90vh; /* Set height to full viewport height */
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden; /* Hide overflowing content */
+            position: relative;
+        }
+
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Place the video behind other content */
+            object-fit: cover;
+        }
+        .content {
+            text-align: center;
+            padding: 50px;
+            color: #333; /* Change text color */
+        }
+
+        .content h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: rgb(163, 54, 54);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        header {
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        header p {
+            margin-top: 5px;
+            font-size: 1.2em;
+        }
+
+        section {
+            max-width: 8000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            color: black;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+      
+        .zeroo {
+            position: relative;
+            right: 90px;
+        }
+        .zero{
+            position: relative;
+            right: 70px;
+        }
+        .one {
+            position: relative;
+            right: 56px;
+        }
+
+        .two {
+            position: relative;
+            right: 40px;
+        }
+
+        .five {
+            position: relative;
+            right: 450px;
+        }
+        .three{
+          position: relative;
+          right: 460px;
+        }
+        .four{
+          position: relative;
+          right:455px;
+        }   
+        
+        
+        .cont-fluid{
+            width: 100%;
+        }
+        .header1{
+            width: 100%;
+          background-color: black;
+          height: 290px;
+          margin-top: px;
+        }
+        .social-icons img{
+    position: relative;
+    left: 40px;
+    top:170px;
+    width: 60px;
+    transition: 0.5s;
+    margin-top: 10PX;
+}
+.social-icons a:hover img
+{
+    transform: translateY(-10px);
+}
+.footer{
+    margin-top: 50px;
+    width: 100%;
+    position: relative;
+    right: 20px;
+}
+           
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <nav class="nav-bar">
+            <div class="logo">
+                <img class="logo-item" src="logoo.png" alt="Logo">
+            </div>
+            <div class="three">
+                <a href="home.html"><p class="nav-item">HOME</p></a>
+            </div>
+            <div class="four">
+                <a href="#"><p class="nav-item ">ABOUT US</p></a>
+            </div>
+            <div class="five">
+                <a href="loginoption.html"><p class="nav-item ">LOGIN</p></a>
+            </div>
+        </nav>
+    </div>
+    <div class="hi">
+        <video class="video-background" autoplay muted loop>
+            <!-- Initially empty source -->
+            <source src="z.mp4" type="video/mp4">
+            <!-- Provide fallback content for browsers that don't support HTML5 video -->
+            Your browser does not support the video tag.
+        </video>
+        <div class="content">
+            <h1 class="line">"ABOUT US"</h1>
+         
+
+        </div>
+    </div>
+
+    <header>
+        <h1>Culinary Connect - Explore the Art of Culinary Bliss</h1>
+        <p>Your journey to exquisite home-cooked meals begins here.</p>
+    </header>
+
+    <section id="about">
+        <h2>About Culinary Connect</h2>
+        <p>Embark on a culinary adventure where every meal is a celebration. Culinary Connect simplifies your life and brings the joy of personalized, home-cooked meals to your doorstep.</p>
+    </section>
+
+    <section id="philosophy">
+        <h2>Our Culinary Philosophy</h2>
+        <p>At Culinary Connect, we view cooking as an art. Our chefs are culinary companions dedicated to curating an exceptional dining experience tailored to your tastes, dietary needs, and cultural preferences.</p>
+    </section>
+
+    <section id="why-choose">
+        <h2>Why Choose Culinary Connect?</h2>
+        <ul>
+            <li><strong>Quality Beyond Measure:</strong> Crafted with love, using the finest ingredients for a culinary experience like no other.</li>
+            <li><strong>Trusted Culinary Partners:</strong> Vetted chefs who are more than cooks; they are reliable companions creating trust, one meal at a time.</li>
+            <li><strong>Flexible and Convenient:</strong> Adapt to your lifestyle with customizable plans for daily delights, weekly indulgences, or month-long experiences.</li>
+            <li><strong>Personalization at Its Core:</strong> Unleash your creativity with menu customization and flexible duration options for a stress-free dining journey.</li>
+        </ul>
+    </section>
+
+    <section id="mission">
+        <h2>Our Mission</h2>
+        <p>Culinary Connect is your culinary companion, turning your home into a haven of flavors and comfort. Join us on a flavorful journey to rediscover the joy of home-cooked meals without the effort.</p
+    </section>
+    <div class="footer">
+
+   
+    <header class="header1">
+        <div class="container text-center">
+           
+            <div class="social-icons">
+                <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+                <a href="https://instagram.com/culinaryconnect"><img src="instagram-icon.png" alt="Instagram"></a>
+                <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+                <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="whatsapp-icon.png" alt="WhatsApp"></a>
+                <a href="#"><img src="snapchat-icon.png" alt="Snapchat"></a>
+            </div>
+           
+        </div>
+    </header>
+</div>
+   
